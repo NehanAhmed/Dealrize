@@ -13,9 +13,8 @@ const Footer = () => {
           <div className='flex items-start p-0'><Logo width='150px' /></div>
           <p className=' font-semibold'>More Deals, Less Effort</p>
           <div className='flex gap-4 text-xl '>
-            <div><BsGithub /></div>
-            <div><BsLinkedin color="#0077B5"/></div>
-            <div><FaXTwitter /></div>
+            <div><Link to='https://github.com/NehanAhmed' target='_blank' rel='noopener noreferrer'><BsGithub /></Link></div>
+            <div><Link to='https://x.com/Nehanahmed988' target='_blank' rel='noopener noreferrer'><FaXTwitter /></Link></div>
           </div>
           <div>&copy; 2025 Dealrize. All rights reserved.</div>
         </div>
