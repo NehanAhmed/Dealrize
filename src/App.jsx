@@ -1,18 +1,25 @@
 import React from 'react'
-import { Footer, Header, Hero } from './components'
+import { FeauturedSection, FeauturedSection2, Footer, Header, Hero, LogoDiv, PricingSection, RichText, Statistic, Testimonial } from './components'
 import { Outlet } from 'react-router'
 
-const App = () => {
-    
+const App = () => {    
+  
   return (
-    <div className='w-full flex flex-col '> 
+    <> 
       <Header />
-      <main className='w-full'>
+      <main className='w-full bg-zinc-50 overflow-x-hidden'>
         {/* <Outlet /> */}
         <Hero/>
+        <LogoDiv />
+        <RichText />
+        <FeauturedSection />
+        <FeauturedSection2  />
+        <PricingSection />
+        <Statistic />
+        <Testimonial />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
 

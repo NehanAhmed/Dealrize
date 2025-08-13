@@ -12,7 +12,7 @@ const NavLinks = () => {
         },
         {
             name: 'Twitter',
-            path: 'https://www.linkedin.com',
+            path: 'https://x.com/Nehanahmed988',
             icon: <BsTwitterX className='text-xl text-blue hover: transition-all duration-300 ease-in-out'/>
         },
         {
@@ -24,7 +24,7 @@ const NavLinks = () => {
         <GitubStars />
         <div className='flex gap-4 items-center'>
             {socialLinks.map((link,idx) => (
-                <a href={link.path} key={idx} className='flex items-center gap-2 cursor-pointer rounded'>
+                <a href={link.path} key={idx} className='flex items-center gap-2  rounded'>
                     
                     {link.icon}
 
@@ -33,7 +33,7 @@ const NavLinks = () => {
             ))}
         </div>
         <div>
-            <Button className='border border-orange  text-zinc-50 bg-orange hover:text-white transition-all duration-300 ease-in-out px-3 font-semibold text-lg h-[45px] cursor-pointer '>
+            <Button className=' text-zinc-50 bg-orange hover:text-white hover:bg-orange/70 transition-all duration-300 ease-in-out px-3 font-semibold text-lg h-[45px]  '>
                 Get Started
             </Button>
         </div>

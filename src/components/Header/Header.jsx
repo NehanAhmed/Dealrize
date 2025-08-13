@@ -5,28 +5,25 @@ import { useSelector } from 'react-redux'
 const Header = () => {
   const navItems = [
     {
-      name: 'Home',
-      path: ''
+      name: 'Pricing',
+      path: '/pricing'
     },
     {
-      name: 'About',
-      path: '/about'
+      name: 'Products',
+      path: '/products'
+    },
+    {
+      name: 'Docs',
+      path: '/docs'
     },
     {
       name: 'Contact',
       path: '/contact'
     },
-    {
-      name: 'Services',
-      path: '/services'
-    },
-    {
-      name: 'Blog',
-      path: '/blog'
-    }
+    
   ]
   return (
-    <div className='flex justify-around items-center '>
+    <div className='flex justify-around items-center bg-zinc-50 border border-b-zinc-2  00'>
       <div className='flex justify-center items-center px-5'>
         <Logo width='130px'/>
       </div>
