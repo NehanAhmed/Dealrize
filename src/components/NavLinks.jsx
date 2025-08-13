@@ -3,6 +3,7 @@ import GitubStars from './ui/GithubStars'
 import { Github, Twitter, X } from 'lucide-react'
 import { Button } from './ui/button'
 import { BsGithub, BsTwitterX } from 'react-icons/bs'
+import { Link } from 'react-router'
 const NavLinks = () => {
     const socialLinks = [
         {
@@ -24,12 +25,12 @@ const NavLinks = () => {
         <GitubStars />
         <div className='flex gap-4 items-center'>
             {socialLinks.map((link,idx) => (
-                <a href={link.path} key={idx} className='flex items-center gap-2  rounded'>
+                <Link target='_blank' rel='noopener noreferrer' to={link.path} key={idx} className='flex items-center gap-2  rounded'>
                     
                     {link.icon}
 
                     
-                </a>
+                </Link>
             ))}
         </div>
         <div>
