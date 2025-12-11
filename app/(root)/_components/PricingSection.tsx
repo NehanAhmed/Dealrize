@@ -23,7 +23,7 @@ const PricingSection: React.FC = () => {
     ];
 
     return (
-        <section className="py-24 px-4 bg-background mt-40">
+        <section id='pricing' className="py-24 px-4 bg-background mt-40">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
@@ -154,68 +154,68 @@ const PricingSection: React.FC = () => {
 
                 {/* Feature Comparison Table */}
                 <div className="max-w-4xl mx-auto">
-  <h3 className="text-2xl font-semibold text-foreground mb-8 text-center font-[family-name:var(--font-hanken)]">
-    Compare Plans
-  </h3>
+                    <h3 className="text-2xl font-semibold text-foreground mb-8 text-center font-[family-name:var(--font-hanken)]">
+                        Compare Plans
+                    </h3>
 
-  <div className="border border-border rounded-xl overflow-hidden bg-card shadow-sm">
-    <div className="overflow-x-auto">
-      <table className="w-full">
-        <thead>
-          <tr className="bg-muted/40">
-            <th className="text-left py-5 px-6 text-sm font-semibold text-foreground">
-              Features
-            </th>
-            <th className="text-center py-5 px-6 text-sm font-semibold text-foreground w-32">
-              Free
-            </th>
-            <th className="text-center py-5 px-6 text-sm font-semibold text-foreground bg-muted/60 w-32">
-              Pro
-            </th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-border">
-          {features.map((feature, index) => (
-            <tr
-              key={index}
-              className="hover:bg-muted/20 transition-colors"
-            >
-              <td className="py-4 px-6 text-sm font-medium text-foreground">
-                {feature.name}
-              </td>
-              <td className="py-4 px-6 text-center">
-                {feature.free ? (
-                  <div className="flex justify-center">
-                    <div className="rounded-full bg-foreground/10 p-1">
-                      <Check className="h-4 w-4 text-foreground" strokeWidth={2.5} />
+                    <div className="border border-border rounded-xl overflow-hidden bg-card shadow-sm">
+                        <div className="overflow-x-auto">
+                            <table className="w-full">
+                                <thead>
+                                    <tr className="bg-muted/40">
+                                        <th className="text-left py-5 px-6 text-sm font-semibold text-foreground">
+                                            Features
+                                        </th>
+                                        <th className="text-center py-5 px-6 text-sm font-semibold text-foreground w-32">
+                                            Free
+                                        </th>
+                                        <th className="text-center py-5 px-6 text-sm font-semibold text-foreground bg-muted/60 w-32">
+                                            Pro
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-border">
+                                    {features.map((feature, index) => (
+                                        <tr
+                                            key={index}
+                                            className="hover:bg-muted/20 transition-colors"
+                                        >
+                                            <td className="py-4 px-6 text-sm font-medium text-foreground">
+                                                {feature.name}
+                                            </td>
+                                            <td className="py-4 px-6 text-center">
+                                                {feature.free ? (
+                                                    <div className="flex justify-center">
+                                                        <div className="rounded-full bg-foreground/10 p-1">
+                                                            <Check className="h-4 w-4 text-foreground" strokeWidth={2.5} />
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div className="flex justify-center">
+                                                        <X className="h-4 w-4 text-muted-foreground/30" strokeWidth={2} />
+                                                    </div>
+                                                )}
+                                            </td>
+                                            <td className="py-4 px-6 text-center bg-muted/5">
+                                                {feature.pro ? (
+                                                    <div className="flex justify-center">
+                                                        <div className="rounded-full bg-foreground/10 p-1">
+                                                            <Check className="h-4 w-4 text-foreground" strokeWidth={2.5} />
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div className="flex justify-center">
+                                                        <X className="h-4 w-4 text-muted-foreground/30" strokeWidth={2} />
+                                                    </div>
+                                                )}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                  </div>
-                ) : (
-                  <div className="flex justify-center">
-                    <X className="h-4 w-4 text-muted-foreground/30" strokeWidth={2} />
-                  </div>
-                )}
-              </td>
-              <td className="py-4 px-6 text-center bg-muted/5">
-                {feature.pro ? (
-                  <div className="flex justify-center">
-                    <div className="rounded-full bg-foreground/10 p-1">
-                      <Check className="h-4 w-4 text-foreground" strokeWidth={2.5} />
-                    </div>
-                  </div>
-                ) : (
-                  <div className="flex justify-center">
-                    <X className="h-4 w-4 text-muted-foreground/30" strokeWidth={2} />
-                  </div>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+                </div>
 
                 {/* FAQ Section */}
                 <div className="mt-20 max-w-3xl mx-auto">

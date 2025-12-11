@@ -1,11 +1,11 @@
 'use client'
 import { motion } from 'motion/react'
 
-export const FlipLink = ({ children, href, className }: { children: string; href: string; className?: string }) => {
+export const FlipLink = ({ children, href, className }: { children?: string; href?: string; className?: string }) => {
     return <motion.a
         initial='initial'
         whileHover="hovered"
-        href={href}
+        href={href ? href : ''}
         className={`relative block overflow-hidden  whitespace-nowrap ${className}`}
 
     >

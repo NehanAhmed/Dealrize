@@ -25,7 +25,7 @@ const howItWorksSteps = [
 
 const HowitWorks = () => {
     return (
-        <section className='w-full mt-20 flex flex-col items-center justify-start gap-10 font-hanken'>
+        <section id='process' className='w-full mt-20 flex flex-col items-center justify-start gap-10 font-hanken'>
             <div className='w-xl text-center'>
                 <HoverBorderGradient
                     containerClassName="rounded-full mx-auto my-5"
