@@ -1,3 +1,4 @@
+'use client'
 import { motion } from 'motion/react'
 
 export const FlipLink = ({ children, href, className }: { children: string; href: string; className?: string }) => {
