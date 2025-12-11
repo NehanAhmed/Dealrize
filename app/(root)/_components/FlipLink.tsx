@@ -1,8 +1,11 @@
 'use client'
 import { motion } from 'motion/react'
+import Link from 'next/link';
 
-export const FlipLink = ({ children, href, className }: { children?: string; href?: string; className?: string }) => {
-    return <motion.a
+const MotionLink = motion(Link)
+
+export const FlipLink = ({ children, href, className }: { children?: React.ReactNode; href?: string; className?: string }) => {
+    return <MotionLink
         initial='initial'
         whileHover="hovered"
         href={href ? href : ''}
@@ -28,5 +31,5 @@ export const FlipLink = ({ children, href, className }: { children?: string; hre
 
             {children}
         </motion.div>
-    </motion.a>
+    </MotionLink>
 }

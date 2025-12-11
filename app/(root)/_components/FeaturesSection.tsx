@@ -15,7 +15,7 @@ const FeaturesSection = () => {
                     <span>Unique Features</span>
                 </HoverBorderGradient>
                 <h1 className='font-montserrat text-5xl font-extrabold'>Everything You Need to Close More Deals</h1>
-                <p className='text-md font-hanken text-neutral-800 my-5 w-lg mx-auto'>AI detects opportunities, organizes visually, suggests responses—turning inbox chaos into closed partnerships instantly.</p>
+                <p className='text-md font-hanken text-neutral-800 dark:text-neutral-600 my-5 w-lg mx-auto'>AI detects opportunities, organizes visually, suggests responses—turning inbox chaos into closed partnerships instantly.</p>
             </div>
             <div>
                 <BentoFeatures />

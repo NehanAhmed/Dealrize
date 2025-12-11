@@ -20,7 +20,7 @@ const Integrations = () => {
                     <div>
 
                         <h1 className='text-5xl font-extrabold'>Seamless Integrations</h1>
-                        <p className='my-2 text-neutral-700'>Connect the platforms you already use. One-click authentication syncs your Gmail and YouTube—so DealFlow AI can start finding opportunities in seconds, not hours.</p>
+                        <p className='my-2 text-neutral-700 dark:text-neutral-600'>Connect the platforms you already use. One-click authentication syncs your Gmail and YouTube—so DealFlow AI can start finding opportunities in seconds, not hours.</p>
                     </div>
                     <Button className='py-5 '><FlipLink className='shadow-lg text-lg font-hanken' href='/get-started'>Get Started for Free</FlipLink></Button>
                 </div>
