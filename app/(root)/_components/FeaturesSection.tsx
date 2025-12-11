@@ -4,7 +4,7 @@ import { BentoFeatures } from './BentoFeatures'
 
 const FeaturesSection = () => {
     return (
-        <section className='w-full flex flex-col items-center justify-start gap-14 '>
+        <section id='features' className='w-full flex flex-col items-center justify-start gap-14 '>
             <div className='w-xl text-center'>
                 <HoverBorderGradient
                     containerClassName="rounded-full mx-auto my-5"
