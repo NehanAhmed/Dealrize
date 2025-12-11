@@ -27,10 +27,10 @@ const PricingSection: React.FC = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-5xl font-semibold text-foreground mb-4 font-montserrat">
+                    <h2 className="text-6xl font-extrabold text-foreground mb-4 font-montserrat">
                         Simple, Transparent Pricing
                     </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                    <p className="text-neutral-800 dark:text-neutral-600 text-lg w-xl mx-auto">
                         Start free and upgrade when you're ready to unlock the full power of AI-driven deal management.
                     </p>
                 </div>

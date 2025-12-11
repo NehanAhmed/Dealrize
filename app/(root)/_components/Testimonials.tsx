@@ -16,7 +16,7 @@ const Testimonials = () => {
                     <span>People with ❤️</span>
                 </HoverBorderGradient>
                 <h1 className='text-5xl font-extrabold font-montserrat '>Hear What our Costumer Says</h1>
-                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto ">
+                <p className="text-gray-800 dark:text-neutral-600 max-w-2xl mx-auto ">
                     Join thousands of satisfied customers who've transformed their business with our cutting-edge solutions. Discover how our platform drives growth, streamlines operations, and delivers exceptional results every single day.
                 </p>
             </div>

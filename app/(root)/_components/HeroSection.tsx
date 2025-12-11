@@ -25,7 +25,7 @@ const Hero = () => {
                     <span>Combinator</span>
                 </HoverBorderGradient>
                 <h1 className='font-montserrat my-5 text-7xl font-extrabold '>Turn Inbox Chaos Into Closed Deals</h1>
-                <p className='text-lg w-120 text-neutral-700 mx-auto'>AI-powered detection that turns inbox chaos into organized opportunities—automatically.</p>
+                <p className='text-lg w-120 text-neutral-700 dark:text-neutral-700 mx-auto '>AI-powered detection that turns inbox chaos into organized opportunities—automatically.</p>
                 <Button className='mt-8 py-5 '><FlipLink className='shadow-lg text-lg font-hanken' href='/get-started'>Get Started for Free</FlipLink></Button>
                 <p className='flex items-center justify-center mx-auto mt-5 gap-2'><CreditCard className='' /> No credit card Required </p>
             </div>

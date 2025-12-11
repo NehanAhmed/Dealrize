@@ -1,15 +1,4 @@
-"use client";
-import React from "react";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-
-export function HeroImage() {
-  return (
-    <div className="flex">
-      <ContainerScroll
-        titleComponent="Hell"
-      >
-        <img
-          src={`/dashboard'use client';
+'use client';
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -31,14 +20,14 @@ export function ModeToggle() {
   return (
     <motion.button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="group relative inline-flex items-center justify-center h-10 w-10 rounded-lg border border-neutral-200 bg-white shadow-sm transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900"
+      className="group relative inline-flex items-center justify-center h-10 w-10 rounded-lg bg-white shadow-sm transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label="Toggle theme"
     >
       {/* Background glow effect on hover */}
       <motion.div
-        className="absolute inset-0 rounded-lg bg-gradient-to-br from-yellow-400/0 to-orange-400/0 group-hover:from-yellow-400/10 group-hover:to-orange-400/10 dark:group-hover:from-blue-400/10 dark:group-hover:to-cyan-400/10"
+        className="absolute inset-0 rounded-lg "
         initial={false}
       />
 
@@ -59,9 +48,9 @@ export function ModeToggle() {
           className="absolute"
         >
           {isDark ? (
-            <Moon className="h-5 w-5 text-neutral-700 dark:text-blue-400" />
+            <Moon className="h-5 w-5 text-neutral-700 dark:text-neutral-400" />
           ) : (
-            <Sun className="h-5 w-5 text-neutral-700 dark:text-orange-400" />
+            <Sun className="h-5 w-5 text-neutral-700 dark:text-neutral-800" />
           )}
         </motion.div>
       </motion.div>
@@ -83,15 +72,5 @@ export function ModeToggle() {
         }}
       />
     </motion.button>
-  );
-}.webp`}
-          alt="hero"
-          height={720}
-          width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
-          draggable={false}
-        />
-      </ContainerScroll>
-    </div>
   );
 }
