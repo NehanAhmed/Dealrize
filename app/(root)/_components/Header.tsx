@@ -5,13 +5,13 @@ import { FlipLink } from './FlipLink'
 import Link from 'next/link'
 
 const Header = () => {
-  const navItems = [
-    { id: 1, name: 'How it Works', url: '/how-it-works' },
-    { id: 2, name: 'Features', url: '/features' },
-    { id: 3, name: 'Pricing', url: '/pricing' }
-  ]
+const navItems = [
+  { id: 1, name: 'Product', url: '/product' },
+  { id: 2, name: 'Features', url: '/features' },
+  { id: 3, name: 'Pricing', url: '/pricing' }
+]
   return (
-    <header className='w-full px-20 py-5 flex items-center justify-around '>
+    <header className='w-full px-20 py-10 flex items-center justify-around '>
       <div>
         <Link href='/'>
         <h1 className='text-2xl font-hanken font-extrabold'>Dealrize</h1>
