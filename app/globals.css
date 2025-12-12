@@ -5,7 +5,6 @@
   src: url(/Fonts/Hanken_Grotesk/static/HankenGrotesk-Regular.ttf);
 }
 
-
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -54,8 +53,7 @@
 }
 
 :root {
-  
-  
+
   --radius: 0.625rem;
   --background: #F5F4EB;
   --foreground: oklch(0.145 0 0);
