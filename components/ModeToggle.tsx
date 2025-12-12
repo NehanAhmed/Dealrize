@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { motion } from 'motion/react';
 
-export function ModeToggle() {
+export function ModeToggle({ size }: { size?: string }) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -20,7 +20,7 @@ export function ModeToggle() {
   return (
     <motion.button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="group relative inline-flex items-center justify-center h-10 w-10 rounded-lg bg-white shadow-sm transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900"
+      className={`group relative inline-flex items-center justify-center ${size ? `h-${size} w-${size}` : 'h-10 w-10'}  rounded-lg bg-white shadow-sm transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label="Toggle theme"
