@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Mail, Loader2, AlertCircle } from 'lucide-react'
 
 interface ConnectGmailButtonProps {
-  status: boolean
+  status: boolean | undefined
   variant?: 'default' | 'error'
   size?: 'default' | 'large'
   onError?: (error: string) => void
