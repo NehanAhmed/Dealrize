@@ -4,8 +4,8 @@ const isDev = process.env.NODE_ENV === 'development'
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
-const REDIRECT_URI = isDev 
-  ? process.env.GOOGLE_REDIRECT_URI_DEV 
+const REDIRECT_URI = isDev
+  ? process.env.GOOGLE_REDIRECT_URI_DEV
   : process.env.GOOGLE_REDIRECT_URI_PROD
 
 if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET || !REDIRECT_URI) {
@@ -38,7 +38,7 @@ export function createOAuth2Client() {
  */
 export function getAuthUrl(state?: string): string {
   const oauth2Client = createOAuth2Client()
-  
+
   return oauth2Client.generateAuthUrl({
     access_type: 'offline', // Required to get refresh token
     prompt: 'consent', // Force consent screen to ensure refresh token
@@ -55,7 +55,7 @@ export function getAuthUrl(state?: string): string {
  */
 export async function getTokensFromCode(code: string) {
   const oauth2Client = createOAuth2Client()
-  
+
   try {
     const { tokens } = await oauth2Client.getToken(code)
     return tokens
@@ -73,11 +73,11 @@ export async function getTokensFromCode(code: string) {
 export async function getUserInfo(accessToken: string) {
   const oauth2Client = createOAuth2Client()
   oauth2Client.setCredentials({ access_token: accessToken })
-  
+
   try {
     const oauth2 = google.oauth2({ version: 'v2', auth: oauth2Client })
     const { data } = await oauth2.userinfo.get()
-    
+
     return {
       id: data.id || '',
       email: data.email || '',
@@ -99,10 +99,10 @@ export async function getUserInfo(accessToken: string) {
 export async function refreshAccessToken(refreshToken: string) {
   const oauth2Client = createOAuth2Client()
   oauth2Client.setCredentials({ refresh_token: refreshToken })
-  
+
   try {
     const { credentials } = await oauth2Client.refreshAccessToken()
-    
+
     return {
       access_token: credentials.access_token!,
       expiry_date: credentials.expiry_date!,
@@ -121,15 +121,20 @@ export async function refreshAccessToken(refreshToken: string) {
 export async function validateToken(token: string) {
   try {
     const response = await fetch(
-      `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${token}`
+      'https://www.googleapis.com/oauth2/v1/tokeninfo',
+      {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }
     )
-    
+
     if (!response.ok) {
       throw new Error('Token validation failed')
     }
-    
+
     const data = await response.json()
-    
+
     return {
       valid: true,
       scopes: data.scope.split(' '),

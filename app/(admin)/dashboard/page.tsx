@@ -25,7 +25,7 @@ export default async function Page() {
     .from(usersTable)
     .where(eq(usersTable.clerkId, userId))
     .limit(1);
-
+  const completedSetup = user?.completed_setup ?? false;
   // Get current time for greeting
   const currentHour = new Date().getHours();
   let greeting = "Good evening";
@@ -55,7 +55,7 @@ export default async function Page() {
             </h1>
 
             <p className="font-hanken mt-1 text-base text-gray-600 lg:text-lg dark:text-gray-400">
-              {!user.completed_setup
+              {!completedSetup
                 ? "Let's get you set up and ready to go! 🚀"
                 : "Ready to continue your journey?"}
             </p>
@@ -77,7 +77,7 @@ export default async function Page() {
       </div>
 
       {/* Onboarding Section */}
-      {!user.completed_setup && (
+      {!completedSetup && (
         <div className="animate-fadeIn w-full">
           <OnboardingPage />
         </div>
