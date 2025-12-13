@@ -125,7 +125,7 @@ export default function GmailConnectionCard() {
           </div>
         </div>
       ) : (
-        <ConnectGmailButton size="large" />
+        <ConnectGmailButton status={status?.connected} size="large" />
       )}
     </div>
   )
