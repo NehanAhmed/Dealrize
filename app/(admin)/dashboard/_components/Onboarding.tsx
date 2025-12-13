@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   CheckCircle2,
   Mail,
@@ -24,14 +24,35 @@ import { useRouter } from "next/navigation";
 import Toast from "@/components/Toast";
 
 export default function OnboardingPage() {
-  const [currentStep, setCurrentStep] = useState<number>(1);
+  const [currentStep, setCurrentStep] = useState<number>(2);
   const [isConnected, setIsConnected] = useState<boolean>(false);
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [fetchProgress, setFetchProgress] = useState<number>(0);
   const [dealsFound, setDealsFound] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null)
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null)
+  const [statusOfOAuth, setstatusOfOAuth] = useState(false)
   const router = useRouter()
+
+
+  useEffect(() => {
+    const getStatusOfOAuth = async () => {
+      try {
+
+        const response = await fetch('/api/auth/google/status')
+        const data = await response.json()
+        setstatusOfOAuth(data.connected)
+        if (statusOfOAuth) {
+          setCurrentStep(2)
+        }
+      } catch (error) {
+        console.error('Failed to check connection:', error)
+        setstatusOfOAuth(false)
+      }
+    }
+
+    getStatusOfOAuth()
+  }, [])
 
   const handleError = (errorMsg: string) => {
     setError(errorMsg)
@@ -184,8 +205,10 @@ export default function OnboardingPage() {
                       )}
                     </div>
 
-                    <div className="border-border border-t pt-4">
+                    <div className="border-border border-t pt-4 " aria-disabled={statusOfOAuth}>
+
                       <ConnectGmailButton
+                        status={statusOfOAuth}
                         variant={error ? 'error' : 'default'}
                         size="large"
                         onError={handleError}

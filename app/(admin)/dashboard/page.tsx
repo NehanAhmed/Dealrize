@@ -82,10 +82,7 @@ export default async function Page() {
           <OnboardingPage />
         </div>
       )}
-      <div className="grid md:grid-cols-2 gap-6">
-        <GmailConnectionCard />
-        {/* Add more cards here */}
-      </div>
+      
     </main>
   );
 }

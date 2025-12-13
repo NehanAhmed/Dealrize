@@ -4,37 +4,40 @@ import { useState } from 'react'
 import { Mail, Loader2, AlertCircle } from 'lucide-react'
 
 interface ConnectGmailButtonProps {
+  status: boolean
   variant?: 'default' | 'error'
   size?: 'default' | 'large'
   onError?: (error: string) => void
 }
 
-export default function ConnectGmailButton({ 
+export default function ConnectGmailButton({
+  status = false,
   variant = 'default',
+
   size = 'default',
-  onError 
+  onError
 }: ConnectGmailButtonProps) {
   const [loading, setLoading] = useState(false)
 
   const handleConnect = async () => {
     try {
       setLoading(true)
-      
+
       // Get OAuth URL from API
       const response = await fetch('/api/auth/google/url')
-      
+
       if (!response.ok) {
         throw new Error('Failed to get OAuth URL')
       }
-      
+
       const { url } = await response.json()
-      
+
       // Redirect to Google OAuth
       window.location.href = url
     } catch (error) {
       console.error('Failed to initiate OAuth:', error)
       setLoading(false)
-      
+
       if (onError) {
         onError('Connection failed')
       }
@@ -47,15 +50,16 @@ export default function ConnectGmailButton({
   return (
     <button
       onClick={handleConnect}
-      disabled={loading}
+      disabled={loading || status}
       className={`
         inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors
         disabled:opacity-50 disabled:cursor-not-allowed
         ${isLarge ? 'px-6 py-3 text-base' : 'px-4 py-2 text-sm'}
-        ${isError 
-          ? 'bg-destructive text-destructive-foreground hover:bg-destructive/90' 
+        ${isError
+          ? 'bg-destructive text-destructive-foreground hover:bg-destructive/90'
           : 'bg-foreground text-background hover:bg-foreground/90'
         }
+        ${status ? 'bg-green-500 text-white cursor-not-allowed hover:bg-green-600' : ''}
       `}
     >
       {loading ? (
