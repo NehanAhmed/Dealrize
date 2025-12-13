@@ -5,9 +5,7 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 export function HeroImage() {
   return (
     <div className="flex">
-      <ContainerScroll
-        titleComponent="Hell"
-      >
+      <ContainerScroll titleComponent="Hell">
         <img
           src={`/dashboard'use client';
 
@@ -88,7 +86,7 @@ export function ModeToggle() {
           alt="hero"
           height={720}
           width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          className="mx-auto h-full rounded-2xl object-cover object-left-top"
           draggable={false}
         />
       </ContainerScroll>
